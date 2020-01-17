@@ -1,7 +1,9 @@
-*{
-    margin:0;
-    padding:0;
 
+.timer{
+	color:red;
+	font-size:50px;
+	margin:auto;
+	width:100px;
 }
 .title{
 	margin-bottom: 30px;

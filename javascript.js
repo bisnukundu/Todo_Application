@@ -4,6 +4,7 @@ let table = document.querySelector(".tb");
 let tbody = document.querySelector(".tb tbody");
 let data = [];
 let d = 0;
+
 function test(name, id) {
 	let new_row = table.insertRow(1);
 	new_row.setAttribute("id", id)
@@ -23,8 +24,13 @@ function test(name, id) {
 
 add_btn.addEventListener("click", function() {
 	let value = input_box.value;
-	let final = test(value, 3)
-	data.push(value)
+	if (value) {
+		test(value, d++)
+		data.push(value)
+	} else {
+		alert("Please Enter You Number")
+	}
+
 	input_box.value = "";
 })
 
@@ -33,8 +39,13 @@ add_btn.addEventListener("click", function() {
 input_box.addEventListener("keyup", (e) => {
 	if (e.keyCode == 13) {
 		let value = input_box.value;
-		test(value, d++)
-		data.push(value)
+		if (value) {
+			test(value, d++)
+			data.push(value)
+		} else {
+			alert("Please Enter You Number")
+		}
+
 		input_box.value = "";
 	}
 })
